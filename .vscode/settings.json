@@ -1,0 +1,33 @@
+{
+    // 🔴 Tắt toàn bộ gợi ý tự động
+    "editor.quickSuggestions": {
+        "comments": "off",
+        "strings": "off",
+        "other": "off"
+    },
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.wordBasedSuggestions": "off",
+
+    // 🔴 Tắt popup tham số hàm
+    "editor.parameterHints.enabled": false,
+
+    // 🔴 Tắt ghost text (gợi ý mờ)
+    "editor.inlineSuggest.enabled": false,
+
+    // 🔴 Tắt accept suggestion bằng Enter (tránh dính)
+    "editor.acceptSuggestionOnEnter": "off",
+
+    // 🔴 Giảm suggest xuống mức thấp nhất
+    "editor.suggest.showKeywords": false,
+    "editor.suggest.showSnippets": false,
+    "editor.suggest.showFunctions": false,
+    "editor.suggest.showMethods": false,
+    "editor.suggest.showClasses": false,
+    "editor.suggest.showVariables": false,
+    "editor.suggest.showModules": false,
+    "editor.suggest.showProperties": false,
+
+    // 🔴 Nếu có AI (Copilot)
+    "github.copilot.enable": false,
+    "github.copilot.inlineSuggest.enable": false
+}
