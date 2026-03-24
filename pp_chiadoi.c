@@ -19,8 +19,6 @@ int main()
     double a, b;
     int bac = 0;
     char lua_chon;
-
-    // có thể khai báo con trỏ ở quy mô toàn cục thì chia_doi ko cần gọi lại
     double (*ham)(int, double);
 
     while (1)
@@ -31,15 +29,6 @@ int main()
         printf("Chon: ");
         scanf(" %c", &lua_chon);
 
-        /* trong {} mà chỉ có 1 dòng code thì ko cần {}, chỉ cần viết lun cx đc
-            if .....
-                okeeee;
-            else
-            {
-                oke;
-                oke;
-            }
-        */
         if (lua_chon == '1')
         {
             ham = ham_mau;
@@ -55,11 +44,6 @@ int main()
             nhap_khoang(&a, &b);
             chia_doi(a, b, bac, ham);
 
-            /*Này cho biến thêm thôi:
-            Nếu a minh scanf 2 lần liên tiếp sẽ lỗi ví dụ:
-            scanf_1 -> stdin : 'gia_tri_vao' '\n'
-            vì sao khi nhập a minh ấn enter nên std sẽ có cả '\n' nên scanf lần 2 sẽ nhận nó
-            nếu trước scanf lần 2 có printf thì printf nó sẽ nhận \n giùm rồi*/
             lua_chon = chon_menu();
             if (lua_chon != '2') break;
         }
@@ -163,5 +147,6 @@ void chia_doi(double a, double b, int bac, double (*ham)(int, double))
         buoc++;
     }
 
-    printf("\n=> Nghiem gan dung: x = %.6lf (sau %d lan lap)\n", (a + b) / 2.0, buoc);
+    printf("\n=> Nghiem gan dung: x = %.6lf (sau %d lan lap)\n", 
+           (a + b) / 2.0, buoc);
 }

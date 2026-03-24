@@ -6,25 +6,13 @@
 
 double fx[MAX];
 
-
 double f_mau(int n, double x);
 double f_dathuc(int n, double x);
 void create_hamdathuc(int *n);
 double (*f_x)(int n, double x);
 void inp_khoangnghiem(double *a, double *b);
 void nghiem(double a, double b, int n);
-char choose()
-{
-    printf ("\n____________________________________________________\n");
-    printf ("[1] Doi ham\n");
-    printf ("[2] Doi khoang nghiem\n");
-    printf ("[3] Ket thuc\n");
-    printf ("Choose: ");
-    char x;
-    scanf ("%c", &x);
-    return x;
-}
-
+char choose();
 
 int main()
 {
@@ -50,15 +38,24 @@ int main()
         while (1)
         {
             inp_khoangnghiem(&a, &b);
-            printf ("\n");
             nghiem(a, b, n);
-            getchar();
             c = choose();
-            getchar();
             if (c != '2') break;
         }
         if (c != '1') break;
     }
+}
+
+char choose()
+{
+    printf ("\n____________________________________________________\n");
+    printf ("[1] Doi ham\n");
+    printf ("[2] Doi khoang nghiem\n");
+    printf ("[3] Ket thuc\n");
+    printf ("Choose: ");
+    char x;
+    scanf (" %c", &x);
+    return x;
 }
 
 void nghiem(double a, double b, int n)
@@ -78,7 +75,7 @@ void nghiem(double a, double b, int n)
         printf ("%*.*lf%*c%*.*lf\n", 10, 4, x, 10, '|', 13, 4, f);
         count++;
     }   while (fabs(f) >= eps && count < 100);
-    if (count > 100) printf ("khong co nghiem trong khoang.");
+    if (count > 1000) printf ("khong co nghiem trong khoang.");
     else printf ("nghiem cua phuong trinh la %.4lf", x);
 }
 
