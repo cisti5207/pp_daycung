@@ -59,19 +59,17 @@ void out(int i, int n, float *f_x)
 
 void Tinh(int n, float *f_x, float c)
 {
-    float f_p[n + 1];
-    f_p[0] = f_x[0];
-    float tmp, f_c = f_x[0];
-    f_p[0] = 0;
+    float f_p[MAX_LEVEL] = {0};
+    float f_c = f_x[0];
+
 
     out(0, n, f_x);
     printf ("\n %19s", "");
 
     for (int i = 1; i <= n; i++)
     {
-        tmp = f_c * c;
-        f_p[i] = tmp;
-        f_c = tmp + f_x[i];
+        f_p[i] = f_c * c;
+        f_c = f_x[i] + f_p[i];
     }
 
     out(1, n, f_p);

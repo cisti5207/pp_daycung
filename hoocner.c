@@ -18,7 +18,7 @@ int main() {
         printf ("\n[2]. Nhap ham tu chon");
         printf ("\n[3]. Exit");
         printf ("\nNhap lua chon cua ban : ");
-        scanf ("%d", &luachon);
+        scanf (" %d", &luachon);
 
         if (luachon > 3 || luachon <1) 
         { 
@@ -38,6 +38,10 @@ int main() {
         if (luachon == 2) 
             {printf ("\nnhap bac cua phuong trinh :"); 
             scanf ("%d", &n);
+            if (n > MAX) {
+            printf("Bac qua lon!");
+            return 0;
+}
             printf ("\nnhap he so duoi day\n");
             for (int i = 0; i <= n; i++)
             {
@@ -50,11 +54,11 @@ int main() {
             scanf ("%lf", &c);
             sodohoocner (a, n, c);
             printf ("\nban co muon nhap thu gia tri c khac khong (Y de tiep tuc, cac nut khac de dung chuong trinh) : ");
-            scanf (" %d", &luachon);
-        } while (luachon == 'y' || luachon == 'Y');
+            scanf (" %c", &tieptuc);
+        } while (tieptuc == 'y' || tieptuc == 'Y');
     printf ("ban co muon quay ve menu khong (Y de tiep tuc, cac nut khac de dung chuong trinh) : ");
-    scanf (" %c", &luachon);
-    }while (luachon == 'y' || luachon == 'Y');
+    scanf (" %c", &tieptuc);
+    }while (tieptuc == 'y' || tieptuc == 'Y');
     printf ("Chuong trinh da dung, tam biet");
 
     return 0;
@@ -91,6 +95,6 @@ void sodohoocner(double a[], int n, double c){
     printf ("Ham so can tim la P(y %+.3lf) = ", c);
     for (int k = 0; k <= n; k++ )
         {
-            printf (" %+fy^%d ", hamKQ[k], n - k);
+            printf (" %+.3fy^%d ", hamKQ[k], n - k);
         }
 }

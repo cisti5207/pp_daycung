@@ -3,7 +3,7 @@
 
 #define MAX 100
 #define eps 1e-6
-#define MAX_LAP 100
+#define MAX_LAP 500
 
 double he_so[MAX];
 
