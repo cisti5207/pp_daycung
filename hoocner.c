@@ -70,25 +70,25 @@ void sodohoocner(double a[], int n, double c){
     for (int i = 0; i <=n; i++) 
     {
         b[i] = a[i];
-        printf ("%+10f ", b[i]);
+        printf ("%+15.3f ", b[i]);
     }
-    printf ("(phuong trinh ban dau)");
+    printf ("(Phuong Trinh Ban Dau)");
     printf ("\n");
     
     for (int k = n; k >= 0; k--)
     {
-        printf ("%+10f ", b[0]);
+        printf ("%+15.3f ", b[0]);
         for (int i = 1; i <= k; i++)
         {
             b[i] = b[i - 1] * c + b[i];
-            printf ("%+10f ", b[i]);
+            printf ("%+15.3f ", b[i]);
         }
         printf (" (y^%d)", n - k); 
         printf ("\n");
         
         hamKQ[k] = b[k];
     }
-    printf ("Ham so can tim la P(y %+lf) = ", c);
+    printf ("Ham so can tim la P(y %+.3lf) = ", c);
     for (int k = 0; k <= n; k++ )
         {
             printf (" %+fy^%d ", hamKQ[k], n - k);
